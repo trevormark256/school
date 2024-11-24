@@ -1,0 +1,87 @@
+/* Custom event styling */
+.custom-event {
+  display: flex;
+  background-color: #007bff; /* Change this to your preferred color */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0; /* Add some space between events */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a slight shadow */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover state for custom events */
+.custom-event:hover {
+  background-color: #0056b3; /* Darken the background on hover */
+}
+
+/* Styles for calendar events */
+.fc-event {
+  cursor: pointer;
+  border: 1px solid #007bff; /* Change border color if needed */
+  background-color: #eaff00;
+  border-radius: 5px;
+  padding: 10px;
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for raised effect */
+  position: relative; /* Establish a new stacking context */
+}
+
+/* Hover effect for events */
+.fc-event:hover {
+  background-color: rgb(1, 255, 1); /* Change background color on hover */
+  transform: scale(1.1); /* Scale up the event on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  z-index: 5; /* Ensure it has a higher z-index when hovered */
+}
+
+/* Event content to ensure visibility */
+.event-content {
+  position: relative;
+  z-index: 10; /* Ensure event content is above the event background */
+  display: flex;
+  align-items: center; /* Center content vertically */
+}
+
+/* Tooltip styles */
+.calendar-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1000; /* High z-index for tooltip */
+  pointer-events: none; /* Prevent tooltip from blocking mouse events */
+}
+
+.event-content {
+  display: flex;
+  flex-direction: column; /* Stack title and icon vertically */
+  align-items: flex-start; /* Align items to the start */
+  white-space: normal; /* Allow text to wrap */
+  overflow: hidden; /* Hide overflow if needed */
+  text-overflow: ellipsis; /* Optional: show ellipsis for long titles */
+  max-width: 100%; /* Limit the maximum width */
+}
+
+.event-title {
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Show ellipsis if the text overflows */
+  white-space: nowrap; /* Prevent title from wrapping to a new line */
+}
+
+.event-icon {
+  margin-top: 5px; /* Space between title and icon */
+}
+
+.fc .fc-daygrid-day-number {
+  text-decoration: none !important; /* Remove underline from date numbers */
+}
+
+.fc .fc-daygrid-day {
+  text-decoration: none !important; /* Remove underline from the entire day */
+}
+
+/* You can also remove it from anchor tags specifically */
+.fc a {
+  text-decoration: none !important; /* Remove underline from all links in the calendar */
+}

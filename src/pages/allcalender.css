@@ -1,0 +1,58 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    gap: 20px;
+  }
+  
+  /* Large screens (4 months per row) */
+  @media (min-width: 1001px) {
+    .calendar-grid {
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    }
+  }
+  
+  /* Medium screens (3 months per row) */
+  @media (min-width: 901px) and (max-width: 1000px) { /* Adjusted breakpoint to include 1000px */
+    .calendar-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+  }
+  
+  /* Small screens (2 months per row) */
+  @media (min-width: 760px) and (max-width: 900px) { /* Fixed range for 2 columns */
+    .calendar-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+  }
+  
+  /* Extra small screens (1 month per row) */
+  @media (max-width: 760px) {
+    .calendar-grid {
+      grid-template-columns: 1fr; /* 1 column */
+    }
+  }
+  
+  .month-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .month-container h3 {
+    margin-bottom: 10px;
+  }
+  
+  .rbc-event {
+    background-color: #007bff !important; /* Highlight with a blue color */
+    color: white !important; /* White text for contrast */
+    font-weight: bold; /* Bold text */
+    font-size: 12px; /* Slightly smaller font to fit in small cells */
+    padding: 2px;
+    border-radius: 5px;
+  }
+  
